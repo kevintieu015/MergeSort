@@ -68,17 +68,23 @@ public class mergeSort {
 	}
 
 	public static void main(String args[]) {
-		//Array with predetermined values
-        int array[] = {9848, 1231, 6541, 23, 815}; 
-		
-        
-        
-		System.out.println("Predetermined Array:   " + Arrays.toString(array));
+		// Array with predetermined values
+		// int array[] = {9848, 1231, 6541, 23, 815};
+
+		int array[] = new int[5];
+
+		// create a randomize array
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) (Math.random() * 1000);
+		}
+
+		System.out.println("Randomized Array:   " + Arrays.toString(array));
 		mergeSort object = new mergeSort();
 		object.sort(array, 0, array.length - 1);
+		// Array should be sorted
+		System.out.println("Merge Sorted Array: " + Arrays.toString(array));
 
-		//Array should be sorted
-		System.out.println("Merge Sorted Array:    " + Arrays.toString(array));
-	
+		
+
 	}
 }
