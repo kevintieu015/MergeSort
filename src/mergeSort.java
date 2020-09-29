@@ -1,7 +1,9 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 //Algorith is used from Intro to Algorithms 3rd ed. by CLRS
 //This program will allow us to merge sort a given array
 //then mergesort a user input array 
+import java.util.Scanner;
 
 //mergeSort class begins here
 public class mergeSort {
@@ -70,12 +72,20 @@ public class mergeSort {
 	public static void main(String args[]) {
 		// Array with predetermined values
 		// int array[] = {9848, 1231, 6541, 23, 815};
+		// int array[] = new int[5];
+		/*
+		 * create a randomize array for (int i = 0; i < array.length; i++) {
+		 * array[i] = (int) (Math.random() * 1000); }
+		 */
 
-		int array[] = new int[5];
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Please Enter Array Size: ");
+		int arraySize = sc.nextInt();
+		int array[] = new int[arraySize];
 
-		// create a randomize array
-		for (int i = 0; i < array.length; i++) {
-			array[i] = (int) (Math.random() * 1000);
+		for (int i = 0; i < arraySize; i++) {
+			System.out.print("Enter Values: ");
+			array[i] = sc.nextInt();
 		}
 
 		System.out.println("Randomized Array:   " + Arrays.toString(array));
@@ -83,8 +93,6 @@ public class mergeSort {
 		object.sort(array, 0, array.length - 1);
 		// Array should be sorted
 		System.out.println("Merge Sorted Array: " + Arrays.toString(array));
-
-		
 
 	}
 }
